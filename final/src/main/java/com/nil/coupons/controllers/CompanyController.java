@@ -8,11 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.nil.coupons.dao.ICompanyDao;
-import com.nil.coupons.dao.ICouponDao;
-import com.nil.coupons.dao.IPurchaseDao;
-import com.nil.coupons.dao.IUserDao;
 import com.nil.coupons.entities.Company;
-import com.nil.coupons.entities.Coupon;
 import com.nil.coupons.enums.ErrorType;
 import com.nil.coupons.exceptions.ApplicationException;
 import com.nil.coupons.utils.InputChecker;

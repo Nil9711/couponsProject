@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import com.nil.coupons.dao.ICustomerDao;
-import com.nil.coupons.dao.IPurchaseDao;
-import com.nil.coupons.dao.IUserDao;
 import com.nil.coupons.entities.Customer;
 import com.nil.coupons.enums.ErrorType;
 import com.nil.coupons.exceptions.ApplicationException;

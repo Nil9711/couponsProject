@@ -1,6 +1,5 @@
 package com.nil.coupons.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,9 +10,7 @@ import com.nil.coupons.beans.TokenTypeAndId;
 import com.nil.coupons.beans.UserData;
 import com.nil.coupons.dao.ICustomerDao;
 import com.nil.coupons.dao.IUserDao;
-import com.nil.coupons.entities.Coupon;
 import com.nil.coupons.entities.User;
-import com.nil.coupons.enums.ClientType;
 import com.nil.coupons.enums.ErrorType;
 import com.nil.coupons.exceptions.ApplicationException;
 import com.nil.coupons.logic.ICacheManager;
