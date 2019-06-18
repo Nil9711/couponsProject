@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.appBody{
+    background-color:slategray;
+    background-image: url('https://wallpapercave.com/wp/wp1993632.jpg');
+    background-attachment: local;
+    background-size:cover;
+    display: block;
+    position: center;
+    z-index: -20;
+}
+
+

@@ -1,0 +1,30 @@
+<div class="addUserPage">
+
+  <h3 class="addUserHeader">
+    Company User Registration:
+  </h3>
+
+  <form class="addUserForm">
+
+    <mat-form-field>
+      <input matInput name="userCompanyId" type="text" placeholder="User company Id: "
+        [(ngModel)]="user.companyId">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput name="userEmail" type="text" placeholder="User email: "
+        [(ngModel)]="user.userLoginDetails.userEmail">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput name="userPassword" type="password" placeholder="User password: "
+        [(ngModel)]="user.userLoginDetails.password">
+    </mat-form-field>
+
+  </form>
+
+  <div class="addUserButton">
+    <button mat-button type="button" (click)="addUser()">Add Company User!</button>
+  </div>
+
+</div>

@@ -1,0 +1,20 @@
+.editInfoPage{
+    margin: 50px 50px;
+    position: absolute;
+    left: 400px;
+    top: 100px;
+}
+.editInfoForm {
+    margin: 5px 50px 10px 100px;
+    min-width: 100px;
+    max-width: 250px;
+}
+
+.editInfoButton{
+    padding-left: 85px;
+}
+
+.editInfoHeader{
+    padding-left:0px;
+    margin: 5px 50px 10px 100px;
+}

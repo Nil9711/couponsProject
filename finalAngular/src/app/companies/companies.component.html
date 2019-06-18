@@ -1,0 +1,8 @@
+<body *ngIf="isCompanyUser">
+    <span style="position: relative;left: 400px;top:50px;">
+        <button mat-raised-button type='button' style="margin-left: 20px;" (click)="userService.goToAddCoupon()">add new Coupon!</button>
+        <button mat-raised-button type='button' style="margin-left: 20px;" (click)="userService.goToUpdateCoupon()">Update a coupon!</button>
+        <button mat-raised-button type='button' style="margin-left: 20px;" (click)="userService.goToDeleteCoupon()">Delete a coupon!</button>
+    </span>
+</body>
+

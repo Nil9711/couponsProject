@@ -1,0 +1,54 @@
+<body class="updateCouponPage">
+
+  <h3 class="updateCouponHeader">
+    update coupon:
+  </h3>
+
+  <form class="updateCouponForm">
+
+    <mat-form-field>
+      <input matInput name="couponId" type="text" placeholder="Coupon id to update: " [(ngModel)]="coupon.couponId">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput name="CouponTitle" type="text" placeholder="Coupon title: " [(ngModel)]="coupon.title">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput name="CouponDescription" type="text" placeholder="Coupon Description: "
+        [(ngModel)]="coupon.description">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput name="CouponCategory" type="text" placeholder="Coupon Category: " [(ngModel)]="coupon.category">
+    </mat-form-field>
+    
+
+    <mat-form-field>
+      <input matInput name="CouponStartDate" type="date" placeholder="Coupon Start Date: "
+        [(ngModel)]="coupon.startDate">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput name="CouponEndDate" type="date" placeholder="Coupon End Date: " [(ngModel)]="coupon.endDate">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput name="CouponAmount" type="number" placeholder="Coupon Amount: " [(ngModel)]="coupon.amount">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput name="CouponPrice" type="number" placeholder="Coupon Price: " [(ngModel)]="coupon.price">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput name="CouponImg" type="text" placeholder="Coupon Image Url: " [(ngModel)]="coupon.img">
+    </mat-form-field>
+
+    <div class="updateCouponButton">
+      <button mat-button type="button" (click)="updateCoupon()">update Coupon!</button>
+    </div>
+
+  </form>
+
+</body>

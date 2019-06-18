@@ -1,0 +1,20 @@
+.loginPage{
+    margin: 50px 50px;
+    position: absolute;
+    left: 400px;
+    top: 150px;
+}
+.loginForm {
+    margin: 5px 50px 10px 100px;
+    min-width: 100px;
+    max-width: 250px;
+}
+
+.LoginButton{
+    padding-left: 85px;
+}
+
+.loginHeader{
+    padding-left:0px;
+    margin: 5px 50px 10px 100px;
+}

@@ -1,0 +1,23 @@
+<div class="loginPage">
+
+  <h3 class="loginHeader">
+    Sign In:
+  </h3>
+  
+  <form class="loginForm">
+    
+    <mat-form-field>
+      <input matInput placeholder="User Name" name="Name" type="text" [(ngModel)]="user.userName" autocomplete="off">
+    </mat-form-field>
+    
+    <mat-form-field>
+      <input matInput placeholder="Password" type="password" name="password" [(ngModel)]="user.userPassword" autocomplete="off">
+    </mat-form-field>
+
+  </form>
+  
+  <div class="LoginButton">
+    <button mat-button type='button' (click)="login(user)">Login!</button>
+  </div>
+  
+</div>

@@ -1,0 +1,23 @@
+<body style="color:black;">
+    <div style="margin: auto; align-content: center;text-align:center">
+
+        <p >
+            <button mat-raised-button type='button' (click)="getPurchases()">See purchases!</button>
+        </p>
+        <table *ngIf="isViewingPurchases" style="color:black">
+                <thead>
+                    <tr>
+                        <th scope="col">Purchased amount</th>
+                        <th scope="col">Coupon Id</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let purchase of purchasesArray">
+                        <th>{{purchase.purchaseAmount}}</th>
+                        <td>{{purchase.couponId}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+</body>
