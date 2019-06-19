@@ -25,16 +25,13 @@ public class Purchase implements Serializable {
 	@Column(name = "purchase_id", unique = true, nullable = false)
 	private long purchaseId;
 
-	@GeneratedValue
 	@Column(name = "purchase_amount", nullable = false)
 	private int purchaseAmount;
 
 	@ManyToOne
-	@JsonIgnore
 	private Coupon coupon;
 
 	@ManyToOne
-	@JsonIgnore
 	private Customer customer;
 
 	public long getPurchaseId() {

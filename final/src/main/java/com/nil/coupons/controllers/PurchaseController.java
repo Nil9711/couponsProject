@@ -53,7 +53,7 @@ public class PurchaseController {
 
 	private void addPurchaseLogic(Purchase purchase) throws ApplicationException {
 
-		if (couponDao.findById(purchase.getCoupon().getCouponId()) == null) {
+		if (couponDao.findById(purchase.getCoupon().getCouponId()).get() == null) {
 			throw new ApplicationException(ErrorType.INVALID_INPUT, "Coupon was not found.");
 		}
 
