@@ -56,7 +56,6 @@ public class Coupon implements Serializable {
 	private String img;
 
 	@ManyToOne
-	@JsonIgnore
 	private Company company;
 
 	@OneToMany(mappedBy = "coupon", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
