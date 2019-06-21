@@ -45,9 +45,9 @@ export class CouponsComponent implements OnInit {
     this.couponsToDisplay = null;
   }
 
-  public buyThisCoupon(purchaseAmount: number): void {
+  public buyThisCoupon(): void {
 
-    this.purchasesService.addPurchase(this.couponIdBuying, purchaseAmount, this.token);
+    this.purchasesService.addPurchase(this.couponIdBuying, this.purchaseAmount, this.token);
 
   }
   public customerBuying(couponId: number): void {

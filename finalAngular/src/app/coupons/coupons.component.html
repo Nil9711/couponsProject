@@ -34,7 +34,7 @@
         </tr>
         <tr>
           <td> {{coupon.couponId}}</td>
-          <td> {{coupon.title}}</td>
+          <td> {{coupon.couponTitle}}</td>
           <td> {{coupon.category}}</td>
           <td> {{coupon.startDate}}</td>
           <td> {{coupon.endDate}}</td>
@@ -49,9 +49,9 @@
     <div style="color:black" *ngIf="isCustomerBuying">
       How many To Buy?
       <mat-form-field>
-        <input matInput placeholder="Insert Amount" name="amount" type="text" [(ngModel)]="purchaseAmount" style="margin-right: 20px">
+        <input matInput placeholder="Insert Amount" name="amount" type="number" [(ngModel)]="purchaseAmount" style="margin-right: 20px">
         </mat-form-field>
-      <button mat-raised-button type='button' (click)="buyThisCoupon(purchaseAmount)">    Buy Now!</button>
+      <button mat-raised-button type='button' (click)="buyThisCoupon()">    Buy Now!</button>
     </div>
 
   </body>

@@ -1,8 +1,11 @@
+import { Coupon } from './Coupon';
+import { Customer } from './Customer';
+
 export class Purchase {
     public constructor(
         public purchaseId?:number,
-        public customerId?:number,
-        public couponId?:number,
+        public coupon?:Coupon,
+        public customer?:Customer,
         public purchaseAmount?:number
     ) {
     }

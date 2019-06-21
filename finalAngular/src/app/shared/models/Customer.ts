@@ -4,9 +4,9 @@ export class Customer {
     public constructor(
 
         public customerId?:number,
-        public user?:User,
         public customerFirstName?:string,
-        public customerLastName?:string
+        public customerLastName?:string,
+        public user?:User
         
     ) {
 

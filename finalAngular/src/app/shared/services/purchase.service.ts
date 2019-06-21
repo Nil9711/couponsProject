@@ -3,13 +3,15 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Purchase } from '../models/Purchase';
 import { Coupon } from '../models/Coupon';
+import { CouponService } from './coupon.service';
+import { Customer } from '../models/Customer';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PurchaseService {
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(private http: HttpClient, private router: Router,private couponService:CouponService) {
   }
 
   public purchasesArray: Purchase[];
@@ -56,9 +58,12 @@ export class PurchaseService {
   public addPurchase(couponId: number, purchaseAmount: number, token: number): void {
 
     let purchase: Purchase = new Purchase();
-    purchase.couponId = couponId;
-    purchase.customerId = parseInt(sessionStorage.getItem("userId"));
+    purchase.coupon = new Coupon();
+    purchase.customer = new Customer();
+
+    purchase.coupon.couponId = couponId;
     purchase.purchaseAmount = purchaseAmount;
+    purchase.customer.customerId = parseInt(sessionStorage.getItem("userId"));
 
     let observable = this.http.post<Purchase>(`http://localhost:8080/purchases?token=${token}`, purchase);
 

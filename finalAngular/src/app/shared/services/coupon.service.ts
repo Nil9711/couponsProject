@@ -10,8 +10,10 @@ import { Coupon } from '../models/Coupon';
 export class CouponService {
 
   public couponsArray: Coupon[];
+  public coupon: Coupon;
 
   constructor(private http: HttpClient, private router: Router) {
+    this.coupon = new Coupon();
   }
 
   public getUserCoupons(customerId: number,token:number): void {
@@ -34,6 +36,20 @@ export class CouponService {
     observable.subscribe(couponsRes => {
 
       this.couponsArray = couponsRes;
+
+    }, err => {
+      alert("Error Status: " + err.status + ", Message: " + err.message);
+    });
+
+  }
+
+  public getOneCoupon(token:number,couponId:number): void {
+
+    let observable = this.http.get<Coupon>(`http://localhost:8080/coupons/${couponId}?token=${token}`);
+
+    observable.subscribe(couponsRes => {
+
+    this.coupon = couponsRes;
 
     }, err => {
       alert("Error Status: " + err.status + ", Message: " + err.message);
