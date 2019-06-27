@@ -1,18 +1,8 @@
-<body class="appBody">
-
-    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-    <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="userService.goToHome()">Home</button>
-        <button mat-menu-item (click)="userService.goToLogin()">Login</button>
-        <button mat-menu-item (click)="userService.goToRegister()">Register</button>
-        <button mat-menu-item (click)="userService.goToCustomers()">My Account</button>
-        <button mat-menu-item (click)="userService.goToCoupons()">Catalog</button>
-        <button mat-menu-item (click)="userService.goToPurchases()">My Purchases</button>
-        <button *ngIf="isUserTypeCompany" mat-menu-item (click)="userService.goToCompanies()">Companies</button>
-        <button *ngIf="isUserTypeAdmin" mat-menu-item (click)="userService.goToAdministrator()">Administrators</button>
-        <button mat-menu-item (click)="userService.logOut()">Log out</button>
-    </mat-menu>
-    
-    <router-outlet></router-outlet>
-
+<app-home></app-home>
+<body class="background">
+    <router-outlet class="content"></router-outlet>
 </body>
+
+<footer>
+    <app-footer></app-footer>
+</footer>

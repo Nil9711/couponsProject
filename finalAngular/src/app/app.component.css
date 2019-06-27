@@ -1,8 +1,10 @@
-.appBody{
-    background-color:slategray;
-    background-image: url('https://wallpapercave.com/wp/wp1993632.jpg');
-    background-attachment: scroll;
-    display: block;
-    position: center;
-    z-index: -20;
+.background{
+    background-image: url("https://i.imgur.com/YUG16d1.jpg");
+    background-size: cover;
+    z-index: -1;
 }
+
+.content{
+    z-index: 5;
+}
+

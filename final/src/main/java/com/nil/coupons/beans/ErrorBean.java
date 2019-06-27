@@ -1,47 +1,52 @@
 package com.nil.coupons.beans;
 
+import com.nil.coupons.enums.ErrorType;
+
 public class ErrorBean {
 
-    private int internalErrorCode;
-    private String internalMessage;
-    private String externalMessage;
+	private int statusCode;
+	private ErrorType internalMessage;
+	private String externalMessage;
 
-    public int getInternalErrorCode() {
-        return internalErrorCode;
-    }
+	public ErrorBean(int statusCode, ErrorType internalMessage, String externalMessage) {
+		this();
+		this.statusCode = statusCode;
+		this.internalMessage = internalMessage;
+		this.externalMessage = externalMessage;
+	}
 
-    public void setInternalErrorCode(int internalErrorCode) {
-        this.internalErrorCode = internalErrorCode;
-    }
+	public ErrorBean() {
+		super();
+	}
 
-    public String getInternalMessage() {
-        return internalMessage;
-    }
+	public int getStatusCode() {
+		return statusCode;
+	}
 
-    public void setInternalMessage(String internalMessage) {
-        this.internalMessage = internalMessage;
-    }
+	public void setStatusCode(int statusCode) {
+		this.statusCode = statusCode;
+	}
 
-    public String getExternalMessage() {
-        return externalMessage;
-    }
+	public ErrorType getInternalMessage() {
+		return internalMessage;
+	}
 
-    public void setExternalMessage(String externalMessage) {
-        this.externalMessage = externalMessage;
-    }
+	public void setInternalMessage(ErrorType internalMessage) {
+		this.internalMessage = internalMessage;
+	}
 
-    public ErrorBean(int internalErrorCode, String internalMessage, String externalMessage) {
-        this.internalErrorCode = internalErrorCode;
-        this.internalMessage = internalMessage;
-        this.externalMessage = externalMessage;
-    }
+	public String getExternalMessage() {
+		return externalMessage;
+	}
 
-    @Override
-    public String toString() {
-        return "ErrorBean{" +
-                "internalErrorCode=" + internalErrorCode +
-                ", internalMessage='" + internalMessage + '\'' +
-                ", externalMessage='" + externalMessage + '\'' +
-                '}';
-    }
+	public void setExternalMessage(String externalMessage) {
+		this.externalMessage = externalMessage;
+	}
+
+	@Override
+	public String toString() {
+		return "ErrorBean [statusCode=" + getStatusCode() + ", internalMessage=" + getInternalMessage()
+				+ ", externalMessage=" + getExternalMessage() + "]";
+	}
+
 }

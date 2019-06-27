@@ -32,10 +32,12 @@ export class CustomerService {
 
   public updateCustomer(customer:Customer,token:number):void{
 
+    customer.customerId = parseInt(sessionStorage.getItem("userId"));
+
     let observable = this.http.put<Customer>(`http://localhost:8080/customers?token=${token}`, customer);
     observable.subscribe(res => {
 
-      this.router.navigate(["/home"]);
+      alert("Customer Updated");
 
     }, err => {
       alert("Update failed, Error Status: " + err.status + ", Message: " + err.message);

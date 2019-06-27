@@ -1,34 +1,34 @@
 
 <div class="editInfoPage">
 
-    <h3 class="editInfoHeader">
-      Update Details:
-    </h3>
-  
-    <form class="editInfoForm">
-      
-      <mat-form-field>
-        <input matInput name="firstName" placeholder="New first name" [(ngModel)]="customer.customerFirstName">
-      </mat-form-field>
-      
-      <mat-form-field>
-        <input matInput name="lastName" type="text" placeholder="New last name" [(ngModel)]="customer.customerLastName">
-      </mat-form-field>
-      
-      <mat-form-field>
-        <input matInput name="newEmail" type="text" placeholder="New email" [(ngModel)]="customer.user.userLoginDetails.userEmail">
-      </mat-form-field>
+  <h3 class="editInfoHeader">
+    Update Details:
+  </h3>
 
-      <mat-form-field>
-        <input matInput name="newPassword" type="password" placeholder="New password" [(ngModel)]="customer.user.userLoginDetails.password">
-      </mat-form-field>
+  <form class="editInfoForm">
+    
+    <mat-form-field>
+      <input matInput name="firstName" placeholder="New first name" [(ngModel)]="customer.customerFirstName">
+    </mat-form-field>
+    
+    <mat-form-field>
+      <input matInput name="lastName" type="text" placeholder="New last name" [(ngModel)]="customer.customerLastName">
+    </mat-form-field>
+    
+    <mat-form-field>
+      <input matInput name="newEmail" type="text" placeholder="New user name" [(ngModel)]="customer.user.userName">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput name="newPassword" type="password" placeholder="New password" [(ngModel)]="customer.user.userPassword">
+    </mat-form-field>
+
+    
+ 
+  </form>
   
-      
-   
-    </form>
-    
-    <div class="editInfoButton">
-      <button mat-button type="button" (click)="sendCustomerUpdate();sendUserUpdate()">update!!</button>
-    </div>
-    
+  <div class="editInfoButton">
+    <button mat-button type="button" (click)="sendCustomerUpdate();sendUserUpdate()">update!!</button>
   </div>
+  
+</div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../shared/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +8,25 @@ import { UserService } from '../shared/services/user.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private userService:UserService) { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
-    this.userService.checkUserType();
+  }
+
+  public goToLogin():void{
+    this.router.navigate(['users/login']);
+  }
+  public goToRegister():void{
+    this.router.navigate(['customers/register']);
+  }
+  public goToCoupons():void{
+    this.router.navigate(['coupons']);
+  }
+  public goToPurchases():void{
+    this.router.navigate(['purchases']);
+  }
+  public goToCustomer():void{
+    this.router.navigate(['customers']);
   }
 
 }

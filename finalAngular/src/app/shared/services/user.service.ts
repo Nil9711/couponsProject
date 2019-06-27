@@ -99,6 +99,8 @@ public checkUserType():void{
 
   public updateUser(user: User, token: number) {
 
+    user.userId = parseInt(sessionStorage.getItem("userId"));
+
     let observable = this.http.put<User>(`http://localhost:8080/users?token=${token}`, user);
     observable.subscribe(res => {
 

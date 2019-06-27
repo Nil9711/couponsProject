@@ -1,3 +1,4 @@
+import { Company } from './Company';
 
 export class User {
     public constructor( 
@@ -5,7 +6,7 @@ export class User {
                         public userName?:string,
                         public userPassword?:string,
                         public userType?:string,
-                        public companyId?:number,
+                        public company?:Company,
 
                         )
         {

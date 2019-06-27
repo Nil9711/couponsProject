@@ -1,57 +1,52 @@
 <body class="bodyClass">
   
-  <span class="couponsButtons">
-    
-    <div>
-      <button mat-raised-button color="cold" (click)="clear();getAllCoupons()" >See all coupons!</button>
-    </div>
-    
-  </span>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+    <span class="couponsButtons">
+      
+      <div>
+        <button mat-raised-button color="cold" (click)="clear();getAllCoupons()" >See all coupons!</button>
+      </div>
+      
+    </span>
+    <div >
+        <button mat-raised-button color="warn" type='button' (click)="clear()" style="position: relative; right: 15px; left:580px; margin-top: 10px"><i class="material-icons">
+            refresh
+            </i></button>
+      </div>
   
-  <div >
-      <button mat-raised-button type='button' (click)="clear()" style="position: relative; right: 15px;">Clear View!</button>
-    </div>
-
-    
-    <div *ngFor="let coupon of couponsToDisplay">
-      <table class="rwd-table">
-        <tr>
-          <th> ID</th>
-          <th> TITLE</th>
-          <th> CATEGORY</th>
-          <th> STARTS AT</th>
-          <th> ENDS AT</th>
-          <th> AMOUNT</th>
-          <th> PRICE</th>
-          <th *ngIf="coupon.img"> img</th>
-        </tr>
-        <tr>
-          <td> {{coupon.couponId}}</td>
-          <td> {{coupon.couponTitle}}</td>
-          <td> {{coupon.category}}</td>
-          <td> {{coupon.startDate}}</td>
-          <td> {{coupon.endDate}}</td>
-          <td> {{coupon.amount}}</td>
-          <td> {{coupon.price}}</td>
-          <td> {{coupon.img}}</td>
-          <button mat-raised-button type='button' (click)="customerBuying(coupon.couponId)" style="position: relative; right: 30px;">Buy</button>
-        </tr>
-      </table>
-    </div>
-    
-    <div style="color:black" *ngIf="isCustomerBuying">
-      How many To Buy?
-      <mat-form-field>
-        <input matInput placeholder="Insert Amount" name="amount" type="number" [(ngModel)]="purchaseAmount" style="margin-right: 20px">
-        </mat-form-field>
-      <button mat-raised-button type='button' (click)="buyThisCoupon()">    Buy Now!</button>
-    </div>
-
-  </body>
+      
+      <div *ngFor="let coupon of couponsToDisplay">
+        <table class="rwd-table">
+          <tr>
+            <th> ID</th>
+            <th> TITLE</th>
+            <th> CATEGORY</th>
+            <th> STARTS AT</th>
+            <th> ENDS AT</th>
+            <th> AMOUNT</th>
+            <th> PRICE</th>
+            <th *ngIf="coupon.img"> IMAGE</th>
+          </tr>
+          <tr>
+            <td> {{coupon.couponId}}</td>
+            <td> {{coupon.couponTitle}}</td>
+            <td> {{coupon.category}}</td>
+            <td> {{coupon.startDate}}</td>
+            <td> {{coupon.endDate}}</td>
+            <td> {{coupon.amount}}</td>
+            <td> {{coupon.price}}</td>
+            <td> <img class="image" src={{coupon.img}} alt="coupon Image"> </td>
+            
+            <button mat-raised-button type='button' (click)="customerBuying(coupon.couponId)" style="margin-left: 30px; margin-top: 30px; position: relative; right: 30px;">Buy</button>
+          </tr>
+        </table>
+      </div>
+      
+      <div style="color:black" *ngIf="isCustomerBuying">
+        How many To Buy?
+        <mat-form-field>
+          <input matInput placeholder="Insert Amount" name="amount" type="number" [(ngModel)]="purchaseAmount" style="margin-right: 20px">
+          </mat-form-field>
+        <button mat-raised-button type='button' (click)="buyThisCoupon()">    Buy Now!</button>
+      </div>
+  
+    </body>

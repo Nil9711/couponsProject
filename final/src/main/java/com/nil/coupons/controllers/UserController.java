@@ -11,6 +11,7 @@ import com.nil.coupons.beans.UserData;
 import com.nil.coupons.dao.ICustomerDao;
 import com.nil.coupons.dao.IUserDao;
 import com.nil.coupons.entities.User;
+import com.nil.coupons.enums.ClientType;
 import com.nil.coupons.enums.ErrorType;
 import com.nil.coupons.exceptions.ApplicationException;
 import com.nil.coupons.logic.ICacheManager;
@@ -31,12 +32,15 @@ public class UserController {
 	}
 
 	public long createUser(User user) throws ApplicationException {
+		validateUserDetails(user);
 		validateUserInsert(user);
 		userDao.save(user);
 		return user.getUserId();
 	}
 
-	public void updateUser(User user) {
+	public void updateUser(User user) throws ApplicationException {
+		validateUserDetails(user);
+		validateUserUpdate(user);
 		userDao.save(user);
 	}
 
@@ -88,11 +92,46 @@ public class UserController {
 	}
 
 	private void validateUserInsert(User user) throws ApplicationException {
-		User userCheck = userDao.findByUserName(user.getUserName());
-
-		if (userCheck != null) {
-			throw new ApplicationException(ErrorType.INSERTION_ERROR, "User Name is taken.");
+		if (user.getUserName() == null) {
+			throw new ApplicationException(ErrorType.INVALID_INPUT, "invalid Email entered.");
 		}
+
+		if (userDao.findByUserName(user.getUserName()) != null) {
+			throw new ApplicationException(ErrorType.DUPLICATE_ENTRY, "User name is Taken");
+		}
+
+		if (user.getCompany() == null || user.getCompany().getCompanyId() == 0) {
+			user.setUserType(ClientType.CUSTOMER);
+		} else {
+			user.setUserType(ClientType.COMPANY);
+		}
+	}
+
+	private void validateUserUpdate(User user) throws ApplicationException {
+
+		if (user.getCompany() != null) {
+			if (user.getCompany().getCompanyId() != 0) {
+				if (userDao.findById(user.getUserId()).get().getCompany().getCompanyId() != user.getCompany()
+						.getCompanyId()) {
+					throw new ApplicationException(ErrorType.UPDATE_ERROR, "Cant update user company Id.");
+				}
+			}
+
+			if (userDao.findById(user.getUserId()).get().getUserType() != user.getUserType()) {
+				throw new ApplicationException(ErrorType.UPDATE_ERROR, "Cant update user Type.");
+			}
+		}
+	}
+
+	private void validateUserDetails(User user) throws ApplicationException {
+		if (user.getUserName().length() < 3) {
+			throw new ApplicationException(ErrorType.INSERTION_ERROR, "User Name is too short.");
+		}
+
+		if (user.getUserPassword().length() < 6) {
+			throw new ApplicationException(ErrorType.INSERTION_ERROR, "User password is too short.");
+		}
+
 	}
 
 }

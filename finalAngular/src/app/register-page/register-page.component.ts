@@ -6,6 +6,7 @@ import { User } from '../shared/models/User';
 import { Customer } from '../shared/models/Customer';
 import { UserService } from '../shared/services/user.service';
 import { CustomerService } from '../shared/services/customer.service';
+import { Company } from '../shared/models/Company';
 
 
 @Component({
@@ -25,6 +26,7 @@ export class RegisterPageComponent implements OnInit {
       this.customer = new Customer();
       this.customer.user = new User();
       this.customer.user.userType = 'CUSTOMER';
+      this.customer.user.company = null;
   }
 
 
