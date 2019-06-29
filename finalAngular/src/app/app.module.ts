@@ -32,6 +32,7 @@ const routes: Routes = [
     { path: "customers/register", component: RegisterPageComponent },
     { path: "coupons", component: CouponsComponent },
     { path: "customers", component: CustomersComponent },
+    { path: "purchases", component: PurchasesComponent },
     { path: "customers/editInfo", component: EditInfoComponent }
 
 ];
